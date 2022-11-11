@@ -22,8 +22,6 @@ btnCreaGriglia.addEventListener("click", function () {
 
 function generaLaGriglia(celle) {
 
-
-
     // recupero il cointenitore dove mettero la mia griglia
     const contenitoreGriglia = document.querySelector(".contenitore-griglia")
     // ora devo creare qualcosa che mi permetta di generare la griglia stessa
@@ -40,11 +38,28 @@ function generaLaGriglia(celle) {
         nuovaCellaCreata.style.width = `calc(100% / ${celle})`;
         console.log(nuovaCellaCreata)
 
-        nuovaCellaCreata.innerHTML = [i]
+        nuovaCellaCreata.innerHTML = [i +1]
         
         contenitoreGriglia.append(nuovaCellaCreata)
     }
 
 
 
+}
+
+
+/**
+ * riordiniamo le idee
+ * devo creare il campo minato avendo gia a disposizione la griglia
+ * cecrco di creare l'array che contine le bombe 
+ */
+
+function generaUnNumeroCasuale ( min, max ) {
+    return Math.floor( Math.random() * ( max - min + 1 ) ) + min;
+}
+
+function generaListaBombe () {
+    const contenitoreBombe = [];
+
+    
 }
