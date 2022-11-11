@@ -11,14 +11,14 @@ console.log(btnCreaGriglia);
 btnCreaGriglia.addEventListener("click", function () {
     console.log("hai cliccato il pulsante");
 
-    generaLaGriglia(10);
+    const inputNumCell = document.querySelector(".numero-celle")
+
+    generaLaGriglia(inputNumCell.value);
 
 });
 
 // ora che ho reciuperato con fatica il click devo creare una 
 // funzione che mi genri la griglia 
-
-
 
 function generaLaGriglia(celle) {
 
@@ -38,28 +38,20 @@ function generaLaGriglia(celle) {
         nuovaCellaCreata.style.width = `calc(100% / ${celle})`;
         console.log(nuovaCellaCreata)
 
-        nuovaCellaCreata.innerHTML = [i +1]
-        
+        nuovaCellaCreata.innerHTML = [i + 1]
+
+        nuovaCellaCreata.addEventListener("click", function () {
+            console.log(nuovaCellaCreata)
+
+            // ora al click cerco di cambiare colore alla casella!
+            this.classList.toggle("bg-success")
+
+
+        })
+
         contenitoreGriglia.append(nuovaCellaCreata)
     }
 
 
 
-}
-
-
-/**
- * riordiniamo le idee
- * devo creare il campo minato avendo gia a disposizione la griglia
- * cecrco di creare l'array che contine le bombe 
- */
-
-function generaUnNumeroCasuale ( min, max ) {
-    return Math.floor( Math.random() * ( max - min + 1 ) ) + min;
-}
-
-function generaListaBombe () {
-    const contenitoreBombe = [];
-
-    
 }
